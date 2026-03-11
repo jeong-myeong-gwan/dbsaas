@@ -11,6 +11,9 @@
 				<li class="active" id="pid-90">
                     <a href="/agent/event/list"><i class="fa fa-circle-o"></i><span>이벤트 리스트</span></a>
                 </li>
+                <li class="active" id="pid-90">
+                    <a href="/agent/metric/chart"><i class="fa fa-circle-o"></i><span>Instance Metric Chart</span></a>
+                </li>
                
                
             </ul>
