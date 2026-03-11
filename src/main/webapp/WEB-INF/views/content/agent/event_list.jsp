@@ -17,40 +17,37 @@
     <div class="content">
         <div class="box box-default">
             <div class="box-body">
-                <form id="searchfrm" name="searchfrm">
+                <form id="searchfrm" name="searchfrm" method="get" action="/agent/event/list">
 					<!-- <input type="hidden" name="page" value="1"> -->
-                    <div class="row add-top">
-                        <div class="col-md-12">
-                            <label class="col-md-1 control-label">가입일</label>
-                            <div class="col-md-7">
-                                <div class="input-group datepicker input-daterange">
-                                    <input type="text" id="period_from" name="period_from" value="${period_from}" class="form-control" autocomplete="off">
-                                    <span class="input-group-addon">~</span>
-                                    <input type="text" id="period_to" name="period_to" value="${period_to}"  class="form-control" autocomplete="off">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-
-                            </div>
-                        </div>
-                    </div>
+                   
                     <div class="row add-top">
                         <div class="col-md-12">
                             <label class="col-md-1 control-label"></label>
                             <div class="col-md-7">
                                 <div class="input-group">
-                                    <select id="field" name="field" class="form-control">
-									    <option value="name_ko" ${field eq 'name_ko' ? 'selected' : ''}>이름</option>
-									    <option value="user_email" ${field eq 'user_email' ? 'selected' : ''}>이메일</option>
-									    <option value="user_mobile" ${field eq 'user_mobile' ? 'selected' : ''}>모바일</option>
-									</select>
+                                    <select name="instanceId" class="form-control">
+        <option value="">전체</option>
+        <c:forEach var="inst" items="${instances}">
+            <option value="${inst.instanceId}"
+                <c:if test="${instanceId == inst.instanceId}">selected</c:if>>
+                ${inst.instanceName}
+            </option>
+        </c:forEach>
+    </select>
                                     
                                     <span class="input-group-addon"></span>
-                                    <input type="text" name="keyword" value="${keyword}" class="form-control" placeholder="검색어를 입력하십시오.">
+                                    <select name="type" class="form-control">
+        <option value="">전체</option>
+        <c:forEach var="t" items="${eventTypes}">
+            <option value="${t}" <c:if test="${type == t}">selected</c:if>>
+                ${t}
+            </option>
+        </c:forEach>
+    </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
-
+								<button type="submit" class="btn btn-primary">검 색</button>
                             </div>
                         </div>
                     </div>
@@ -69,7 +66,7 @@
                 </h3>
                 
             </div>
-            </form>
+            
             <!-- /.box-header -->
             <form id="form-item-new">
                 <input type="hidden" name="chk_word" id="chk_word">
@@ -78,21 +75,27 @@
 <table class="table table-hover">
 <tr>
     <th>ID</th>
-    <th>Instance</th>
-    <th>Agent</th>
-    <th>Type</th>
-    <th>Seq</th>
-    <th>Time</th>
+        <th>Instance</th>
+        <th>Agent</th>
+        <th>Type</th>
+        <th>Seq</th>
+        <th>Created At</th>
+        <th>보기</th>
 </tr>
 
 <c:forEach var="e" items="${events}">
 <tr>
     <td>${e.id}</td>
-    <td>${e.instanceName}</td>
-    <td>${e.agentId}</td>
-    <td>${e.eventType}</td>
-    <td>${e.seq}</td>
-    <td>${e.createdAt}</td>
+            <td>${e.instanceName}</td>
+            <td>${e.agentId}</td>
+            <td>${e.eventType}</td>
+            <td>${e.seq}</td>
+            <td>${e.createdAt}</td>
+            <td>
+                <a href="/agent/event/detail?id=${e.id}">
+                    상세
+                </a>
+            </td>
 </tr>
 </c:forEach>
 
@@ -109,7 +112,7 @@
     <c:if test="${startPage > 1}">
         <li class="page-item">
             <a class="page-link" 
-               href="/agent/event/list?page=${startPage - 1}&field=${field}&keyword=${keyword}&size=${size}&period_from=${period_from}&period_to=${period_to}" 
+               href="/agent/event/list?page=${startPage - 1}&instanceId=${instanceId}&type=${type}&size=${size}" 
                title="이전 페이지로">
                 <i class="xi-angle-left"></i>
             </a>
@@ -120,7 +123,7 @@
     <c:forEach var="i" begin="${startPage}" end="${endPage}">
         <li class="page-item ${currentPage == i ? 'active' : ''}">
             <a class="page-link" 
-               href="/agent/event/list?page=${i}&field=${field}&keyword=${keyword}&size=${size}&period_from=${period_from}&period_to=${period_to}">
+               href="/agent/event/list?page=${i}&instanceId=${instanceId}&type=${type}&size=${size}">
                 ${i}
             </a>
         </li>
@@ -130,7 +133,7 @@
     <c:if test="${endPage < totalPages}">
         <li class="page-item">
             <a class="page-link" 
-               href="/agent/event/list?page=${endPage + 1}&field=${field}&keyword=${keyword}&size=${size}&period_from=${period_from}&period_to=${period_to}" 
+               href="/agent/event/list?page=${endPage + 1}&instanceId=${instanceId}&type=${type}&size=${size}" 
                title="다음 페이지로">
                 <i class="xi-angle-right"></i>
             </a>
