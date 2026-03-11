@@ -1,0 +1,137 @@
+.error {color: red;}
+.ellipsis_2{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2; /* �쇱씤�� */
+	-webkit-box-orient: vertical;
+	word-wrap:break-word;
+}
+
+.xs-top { margin-top: 7px; }
+.sm-top { margin-top: 10px; }
+.add-top { margin-top: 15px; }
+.more-top { margin-top: 35px; }
+.sm-bottom { margin-bottom: 10px; }
+.add-bottom { margin-bottom: 15px; }
+.more-bottom { margin-bottom: 35px; }
+
+.pointer {cursor: pointer;}
+
+.image-preview {
+	width: 100%;
+	height: 180px;
+	background-position: center center;
+	background:url(/admin/include/img/no_image.jpg);
+	background-color:#fff;
+	background-size: cover;
+	background-repeat:no-repeat;
+	display: inline-block;
+	box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
+}
+.btn-upload {
+	display:block;
+	border-radius:0px;
+	box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
+	margin-top:-5px;
+}
+.image-del {
+	position:absolute;
+	top:0px;
+	right:15px;
+	width:30px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	background-color:rgba(255,255,255,0.6);
+	cursor:pointer;
+}
+
+/* p. */
+.table th{text-align: center !important;}
+.table td.text-center{text-align: center !important;}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{vertical-align: middle !important;}
+.ui-datepicker .ui-datepicker-title select{height: 25px;border: 1px solid #ccc;vertical-align: top;}
+
+/* 200304. P. */
+.sel-list{width: 98%;padding-left: 0;margin: 0 auto 40px;border-top: 1px solid #ccc;border-left: 1px solid #ccc;}
+.sel-list:after{display: block;content: '';clear: both;}
+.sel-list > li{list-style: none;float: left;width: 10%;border: 1px solid #cccccc;border-top: 0;border-left: 0;text-align: center;}
+.sel-list > li > a{display: block;padding: 10px;font-size: 18px;color: #333;font-weight: bold;}
+.sel-list > li.on{background: #eeeeee;}
+
+/* table */
+.table-wrap{border-top: 2px solid #2b63b8;}
+.table-wrap.n-border{border: 0;}
+.table-top{display: block;margin-bottom: 5px;font-size: 16px;font-weight: 300;color: #333333;}
+.cst-table{width: 100%;table-layout: fixed;}
+.cst-table th, .cst-table td{padding: 12px 10px;border: 1px solid #ddd;font-size: 16px;color: #333;font-weight: 300;line-height: 22px;text-align: center;vertical-align: middle;}
+.cst-table th{background: #f5f5f5;font-weight: bold;}
+.cst-table th.bl1{border-left: 1px solid #ddd;}
+.cst-table th.bl0{border-left: 0;}
+.cst-table th.br0{border-right: 0;}
+.cst-table th.text-left{padding-left: 18px;padding-right: 18px;text-align: left;}
+.cst-table td.text-left{padding-left: 18px;padding-right: 18px;text-align: left;}
+.cst-table td.bl1{border-left: 1px solid #ddd;}
+.cst-table td strong{font-weight: bold;}
+.cst-table td .radio, .cst-table td .checkbox{margin-top: 0;margin-bottom: 0;font-size: 16px;}
+.cst-table td .radio{text-align: left;}
+.border-table th, .border-table td{border-left: 0;border-right: 0;}
+.border-table td{word-break: break-all;}
+
+.cst-table .form-control{display: inline-block;width: auto;height: 40px;font-size: 16px;}
+.cst-table .attach-file{display: table;border: 1px solid #ddd;width: 150px;height: 200px;text-align: center;}
+.cst-table .attach-file > span{overflow: hidden;display: table-cell;vertical-align: middle;}
+.cst-table .attach-file img{max-width: 100%;max-height: 100%;}
+.cst-table .form-group{display: block !important;}
+.cst-table .form-group *{display: inline-block;vertical-align: top;}
+.cst-table textarea{display: block;width: 100%;padding: 6px 12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;background-image: none;border: 1px solid #ccc;border-radius: 4px;-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);box-shadow: inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;}
+.update-table .btn-wrap{padding: 10px 0 0;}
+
+
+.cst-modal .close{margin-top: -70px;font-size: 70px;color: #fff;opacity: 1;font-weight: 300;}
+.cst-modal .modal-dialog{width: 620px;margin: 100px auto;}
+.cst-modal .modal-content{padding: 30px;}
+.cst-modal .modal-header{padding: 0;border-bottom: 0;}
+.cst-modal .modal-title{display: block;padding-bottom: 5px;border-bottom: 1px solid #333;margin-bottom: 10px;font-size: 24px;font-weight: bold;color: #333;}
+.cst-modal .modal-body{padding: 0;font-size: 16px;font-wegiht: 300;color: #333;}
+.cst-modal .modal-body > p{padding: 5px 0 15px;}
+.cst-modal .pop-sch-form{padding: 10px 0;margin-bottom: 15px;background: #f5f5f5;text-align: center;}
+.cst-modal .pop-sch-form *{display: inline-block;vertical-align: middle;}
+.cst-modal .pop-sch-form label{color: #333;font-weight: bold;}
+.cst-modal .pop-sch-form .form-control{width: 240px;height: 40px;margin: 0 5px;}
+
+.cst-modal .btn-wrap{margin: 30px 0 0;}
+.cst-modal .btn-wrap button[type="submit"]{background: #3f4d8c;padding: 7px 30px;color: #fff;line-height: 1.5em;}
+
+.form-control.w100p{width: 100%;}
+
+.adm-voca-form .form-group{margin-left: 0; margin-right: 0;}
+.adm-voca-form .form-control{margin: 2px 0;}
+
+.text-left{text-align: left !important;}
+
+.mt5{margin-top: 5px !important;}
+.mb0{margin-bottom: 0 !important;}
+.pt0{padding-top: 0 !important;}
+.pt2{padding-top: 2px !important;}
+.pt5{padding-top: 5px !important;}
+
+.vat{vertical-align: top;}
+.vam{vertical-align: middle;}
+.required{color: #dd4b39;}
+.d-inline{display: inline-block !important;width: auto !important;}
+
+.has-select{padding-top: 0 !important;}
+.has-select input{margin-top: 11px;}
+
+.booth_checkbox.booth_mt {margin-top: 4px;}
+
+@media (max-width: 768px){
+	.m-w100{width: 100%;}
+	.input-group.m-w100{display: block;}
+	.input-group.m-w100 .form-control{float: none;}
+	.input-group-addon.m-w100{display: block;padding: 12px;}
+	.input-group-btn.m-w100{display: block;}
+	.input-group-btn.m-w100 .btn{width: 100% !important;height: auto !important;padding: 15px;}
+}
