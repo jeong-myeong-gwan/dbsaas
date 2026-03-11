@@ -25,7 +25,7 @@ public class EventRepository {
     		log.debug("JSON 변환 오류:" + e.getMessage()); 		
     	}
     	
-        jdbc.update("insert into agent_event (tenant_id, instance_id,agent_id,ts, seq, event_type, payload) values (?,?,?,?,?,?,?)",
+        jdbc.update("insert ignore into agent_event (tenant_id, instance_id,agent_id,ts, seq, event_type, payload) values (?,?,?,?,?,?,?)",
         ev.getTenantId(),
         ev.getInstanceId(),
         ev.getAgentId(),
