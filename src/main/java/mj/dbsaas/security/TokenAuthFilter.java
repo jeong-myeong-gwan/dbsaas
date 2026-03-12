@@ -37,7 +37,7 @@ public class TokenAuthFilter implements Filter {
             String auth = req.getHeader("Authorization");
 
             if (auth == null || !auth.startsWith("Bearer ")) {
-                resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 응답 코드 : 401 Unauthorized
                 resp.getWriter().write("Missing token");
                 return;
             }
